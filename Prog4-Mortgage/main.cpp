@@ -13,7 +13,7 @@ bool parseDouble(string sval, double& val);
 
 int main()
 {
-	double loan, rate, payment;
+	double loan, rate, payment, total;
 	int years;
 	string input;
 	bool stupidity = true;
@@ -84,8 +84,10 @@ int main()
 	Mortgage debt(loan, rate, years);
 
 	payment = debt.getPayment();
-
 	cout << "The loan's monthly payment is $" << fixed << showpoint << setprecision(2) << payment;
+
+	total = debt.getTotal();
+	cout << endl << "The loan's final amount will be $" << fixed << showpoint << setprecision(2) << total;
 
 	return 0;
 }

@@ -22,10 +22,24 @@ void Mortgage::paymentFinder()
 	payment = (loan * (rate / 12) * term) / (term - 1);
 }
 
+void Mortgage::totalFinder()
+{
+	total = payment * 12 * years;
+}
+
 double Mortgage::getPayment()
 {
 	termFinder();
 	paymentFinder();
 
 	return payment;
+}
+
+double Mortgage::getTotal()
+{
+	termFinder();
+	paymentFinder();
+	totalFinder();
+
+	return total;
 }
